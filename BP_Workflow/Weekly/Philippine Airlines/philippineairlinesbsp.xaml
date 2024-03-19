@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1173,13445</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,13445</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>lotustours_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -268,7 +268,7 @@ New DateTime(in_datePeriod.Year, in_datePeriod.Month, 16))))]</InArgument>
                       <OutArgument x:TypeArguments="s:DateTime">[dtDateEnd]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="s:DateTime" xml:space="preserve">[If(in_datePeriod.Day &lt;= 8, New DateTime(in_datePeriod.AddMonths(-1).Year, in_datePeriod.AddMonths(-1).Month, DateTime.DaysInMonth(in_datePeriod.Year, in_datePeriod.Month)), 
+                      <InArgument x:TypeArguments="s:DateTime" xml:space="preserve">[If(in_datePeriod.Day &lt;= 8, New DateTime(in_datePeriod.AddMonths(-1).Year, in_datePeriod.AddMonths(-1).Month, DateTime.DaysInMonth(in_datePeriod.AddMonths(-1).Year, in_datePeriod.AddMonths(-1).Month)), 
 If(in_datePeriod.Day &lt;= 15, New DateTime(in_datePeriod.Year, in_datePeriod.Month, 8),
 If(in_datePeriod.Day &lt;= 23, New DateTime(in_datePeriod.Year, in_datePeriod.Month, 15),
 New DateTime(in_datePeriod.Year, in_datePeriod.Month, 23))))]</InArgument>
