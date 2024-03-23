@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1123,7360</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1598,7360</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>chsr_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -689,7 +689,7 @@
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="This function is to check whether the attachment contains all the keywords from config (but this function allows a typo in the word)" Code="int minScoreThreshold = 75;&#xD;&#xA;bool matchedWithTolerance = true;&#xD;&#xA;&#xD;&#xA;foreach (string keyword in in_ListOfKeyword) {&#xD;&#xA;    List&lt;string&gt; emailAttachmentWords = in_EmailAttachment.Split('.', '_', '-').ToList();&#xD;&#xA;&#xD;&#xA;    // Compare the keyword to each word within the email attachment&#xD;&#xA;    bool keywordMatched = emailAttachmentWords.Any(word =&gt; Fuzz.Ratio(word, keyword) &gt;= minScoreThreshold);&#xD;&#xA;&#xD;&#xA;    if (!keywordMatched)&#xD;&#xA;    {&#xD;&#xA;        matchedWithTolerance = false;&#xD;&#xA;        break;&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;if (matchedWithTolerance) {&#xD;&#xA;&#x9;out_IsAttachmentValid = true;&#xD;&#xA;}&#xD;&#xA;else out_IsAttachmentValid = false;" DisplayName="Function to check whether email attachment is correct" sap:VirtualizedContainerService.HintSize="354,262" sap2010:WorkflowViewState.IdRef="InvokeCode_20" Language="CSharp">
+                                    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="This function is to check whether the attachment contains all the keywords from config (but this function allows a typo in the word)" Code="int minScoreThreshold = 75;&#xD;&#xA;bool matchedWithTolerance = true;&#xD;&#xA;&#xD;&#xA;foreach (string keyword in in_ListOfKeyword) {&#xD;&#xA;    List&lt;string&gt; emailAttachmentWords = in_EmailAttachment.Split(' ', '.', '_', '-').ToList();&#xD;&#xA;&#xD;&#xA;    // Compare the keyword to each word within the email attachment&#xD;&#xA;    bool keywordMatched = emailAttachmentWords.Any(word =&gt; Fuzz.Ratio(word, keyword) &gt;= minScoreThreshold);&#xD;&#xA;&#xD;&#xA;    if (!keywordMatched)&#xD;&#xA;    {&#xD;&#xA;        matchedWithTolerance = false;&#xD;&#xA;        break;&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;if (matchedWithTolerance) {&#xD;&#xA;&#x9;out_IsAttachmentValid = true;&#xD;&#xA;}&#xD;&#xA;else out_IsAttachmentValid = false;" DisplayName="Function to check whether email attachment is correct" sap:VirtualizedContainerService.HintSize="354,262" sap2010:WorkflowViewState.IdRef="InvokeCode_20" Language="CSharp">
                                       <ui:InvokeCode.Arguments>
                                         <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_ListOfKeyword">[listKeywordAttachment]</InArgument>
                                         <InArgument x:TypeArguments="x:String" x:Key="in_EmailAttachment">[Path.GetFileName(attachment.Name)]</InArgument>
@@ -776,7 +776,7 @@
                         </If.Else>
                       </If>
                     </Sequence>
-                    <If Condition="[isSubjectValid AndAlso&#xD;&#xA;isDatePeriodValid AndAlso&#xD;&#xA;isAttachmentValid]" DisplayName="If attachment and subject is correct" sap:VirtualizedContainerService.HintSize="610,937" sap2010:WorkflowViewState.IdRef="If_31">
+                    <If Condition="[isSubjectValid AndAlso&#xA;isDatePeriodValid AndAlso&#xA;isAttachmentValid]" DisplayName="If attachment and subject is correct" sap:VirtualizedContainerService.HintSize="610,937" sap2010:WorkflowViewState.IdRef="If_31">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1791,33 +1791,15 @@
               </Assign>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="BP_Workflow\Monthly\CHSR\Mail_RetrievalStatus.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="BP_Workflow\Monthly\CHSR\Mail_RetrievalStatus.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;PID&quot;).ToString" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                    <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="s:DateTime" x:Key="in_datePeriod">
-                    <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="dtDateEnd" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
-                    <VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="in_TransactionItem" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_emailTo">
-                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="emailAddress" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_name">
-                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="userName" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="st:StringBuilder" x:Key="in_sbSalesMessages">
-                    <VisualBasicValue x:TypeArguments="st:StringBuilder" ExpressionText="sbSalesMessages" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="st:StringBuilder" x:Key="in_sbInvoiceMessages">
-                    <VisualBasicValue x:TypeArguments="st:StringBuilder" ExpressionText="sbInvoiceMessages" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_invoiceOpeningStatement">
-                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="invoiceOpeningStatement" />
-                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_PID">[in_TransactionItem.SpecificContent("PID").ToString]</InArgument>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                  <InArgument x:TypeArguments="s:DateTime" x:Key="in_datePeriod">[dtDateEnd]</InArgument>
+                  <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_emailTo">[emailAddress]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_name">[userName]</InArgument>
+                  <InArgument x:TypeArguments="st:StringBuilder" x:Key="in_sbSalesMessages">[sbSalesMessages]</InArgument>
+                  <InArgument x:TypeArguments="st:StringBuilder" x:Key="in_sbInvoiceMessages">[sbInvoiceMessages]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_invoiceOpeningStatement">[invoiceOpeningStatement]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Sequence>
