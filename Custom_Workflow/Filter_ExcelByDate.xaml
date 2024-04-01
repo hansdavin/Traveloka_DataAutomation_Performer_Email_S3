@@ -13,7 +13,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>869.6,1520</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1123,1512</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Filter_ExcelByDate_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -112,7 +112,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Filter_ExcelByDate" sap:VirtualizedContainerService.HintSize="512,1455.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Filter_ExcelByDate" sap:VirtualizedContainerService.HintSize="512,1447" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="cellPattern" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="listSheets" />
@@ -125,14 +125,13 @@
       <Variable x:TypeArguments="x:Int32" Name="headerRow" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtRawData" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtFilteredData" />
-      <Variable x:TypeArguments="x:Boolean" Name="isEmpty" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Assign - cellPattern" sap:VirtualizedContainerService.HintSize="449.6,121.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign - cellPattern" sap:VirtualizedContainerService.HintSize="450,121" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[cellPattern]</OutArgument>
       </Assign.To>
@@ -140,7 +139,7 @@
         <InArgument x:TypeArguments="x:String">["([A-Za-z]+)(\d+)"]</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence DisplayName="Sequence - Get excel parameter for filtering data" sap:VirtualizedContainerService.HintSize="449.6,123.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Sequence - Get excel parameter for filtering data" sap:VirtualizedContainerService.HintSize="450,121" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -209,7 +208,7 @@
         </TryCatch.Catches>
       </TryCatch>
     </Sequence>
-    <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope - Find header index" sap:VirtualizedContainerService.HintSize="449.6,92.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[in_strFilePath]">
+    <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope - Find header index" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[in_strFilePath]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -233,7 +232,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Match matchDateColumn = System.Text.RegularExpressions.Regex.Match(in_resultAddress, in_regexPattern);&#xA;Match matchStartTable = System.Text.RegularExpressions.Regex.Match(in_strStartTable, in_regexPattern);&#xA;if (matchDateColumn.Success &amp;&amp; matchStartTable.Success)&#xA;{&#xA;    // Extract the alphabet and number parts from the match groups&#xA;    out_headerCol = matchStartTable.Groups[1].Value;&#xA;    out_headerRow = int.Parse(matchDateColumn.Groups[2].Value);&#xA;}&#xA;else&#xA;{&#xA;    // Handle cases where the input does not match the pattern&#xA;    Console.WriteLine($&quot;in_resultAddress: {in_resultAddress} does not match the expected pattern&quot;);&#xA;}" DisplayName="Invoke Code - Table Address" sap:VirtualizedContainerService.HintSize="449.6,204.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Match matchDateColumn = System.Text.RegularExpressions.Regex.Match(in_resultAddress, in_regexPattern);&#xA;Match matchStartTable = System.Text.RegularExpressions.Regex.Match(in_strStartTable, in_regexPattern);&#xA;if (matchDateColumn.Success &amp;&amp; matchStartTable.Success)&#xA;{&#xA;    // Extract the alphabet and number parts from the match groups&#xA;    out_headerCol = matchStartTable.Groups[1].Value;&#xA;    out_headerRow = int.Parse(matchDateColumn.Groups[2].Value);&#xA;}&#xA;else&#xA;{&#xA;    // Handle cases where the input does not match the pattern&#xA;    Console.WriteLine($&quot;in_resultAddress: {in_resultAddress} does not match the expected pattern&quot;);&#xA;}" DisplayName="Invoke Code - Table Address" sap:VirtualizedContainerService.HintSize="450,205" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_regexPattern">[cellPattern]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_resultAddress">[headerAddress]</InArgument>
@@ -242,8 +241,8 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_strStartTable">[strStartTable]</InArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <ui:ReadRange AddHeaders="True" DataTable="[dtRawData]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="449.6,128" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="[$&quot;{headerCol}{headerRow}&quot;]" SheetName="[listSheets(0)]" WorkbookPath="[in_strFilePath]" />
-    <TryCatch DisplayName="Try Catch - Filtering DataTable" sap:VirtualizedContainerService.HintSize="449.6,436" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <ui:ReadRange AddHeaders="True" DataTable="[dtRawData]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="450,128" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="[$&quot;{headerCol}{headerRow}&quot;]" SheetName="[listSheets(0)]" WorkbookPath="[in_strFilePath]" />
+    <TryCatch DisplayName="Try Catch - Filtering DataTable" sap:VirtualizedContainerService.HintSize="450,433" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -251,7 +250,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:InvokeCode ContinueOnError="{x:Null}" Code="var columnsToDelete = io_dtRawData.Columns.Cast&lt;DataColumn&gt;()&#xD;&#xA;    .Where(c =&gt; c.ColumnName.StartsWith(&quot;Column&quot;))&#xD;&#xA;    .ToList();&#xD;&#xA;foreach (var columnToDelete in columnsToDelete)&#xD;&#xA;{&#xD;&#xA;    io_dtRawData.Columns.Remove(columnToDelete);&#xD;&#xA;}&#xD;&#xA;io_dtRawData.AsEnumerable().ToList().ForEach(row =&gt;&#xD;&#xA;{&#xD;&#xA;   if (Double.TryParse(row[in_strColumn].ToString(), out double doubleValue))&#xD;&#xA;    {&#xD;&#xA;        row[in_strColumn] = DateTime.FromOADate(doubleValue).ToString();&#xD;&#xA;    }&#xD;&#xA;});&#xD;&#xA;var filteredRows = io_dtRawData.AsEnumerable()&#xD;&#xA;    .Where(r =&gt; !r.IsNull(in_strColumn) &amp;&amp;&#xD;&#xA;    DateTime.TryParse(r.Field&lt;string&gt;(in_strColumn), out _) &amp;&amp;&#xD;&#xA;    DateTime.Parse(r.Field&lt;string&gt;(in_strColumn)).Year == in_datePeriod.Year &amp;&amp;&#xD;&#xA;    DateTime.Parse(r.Field&lt;string&gt;(in_strColumn)).Month == in_datePeriod.Month);&#xD;&#xA;//var filteredRows = io_dtRawData.AsEnumerable()&#xD;&#xA;//    .Where(r =&gt; !r.IsNull(in_strColumn) &amp;&amp;&#xD;&#xA;//&#x9;DateTime.FromOADate(Convert.ToDouble(r.Field&lt;double&gt;(in_strColumn))).Year == in_datePeriod.Year &amp;&amp;&#xD;&#xA;//&#x9;DateTime.FromOADate(Convert.ToDouble(r.Field&lt;double&gt;(in_strColumn))).Month == in_datePeriod.Month);&#xD;&#xA;if (filteredRows.Count() == 0)&#xD;&#xA;{&#xD;&#xA;&#x9;out_isEmpty = true;&#xD;&#xA;    //throw new UiPath.Core.BusinessRuleException(&quot;No rows found that match the criteria.&quot;);&#xD;&#xA;}&#xD;&#xA;out_dtFilteredData = filteredRows.CopyToDataTable();&#xD;&#xA;" DisplayName="Invoke Code - Filtering DataTable" sap:VirtualizedContainerService.HintSize="333.6,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
+        <ui:InvokeCode ContinueOnError="{x:Null}" Code="var columnsToDelete = io_dtRawData.Columns.Cast&lt;DataColumn&gt;()&#xD;&#xA;    .Where(c =&gt; c.ColumnName.StartsWith(&quot;Column&quot;))&#xD;&#xA;    .ToList();&#xD;&#xA;foreach (var columnToDelete in columnsToDelete)&#xD;&#xA;{&#xD;&#xA;    io_dtRawData.Columns.Remove(columnToDelete);&#xD;&#xA;}&#xD;&#xA;io_dtRawData.AsEnumerable().ToList().ForEach(row =&gt;&#xD;&#xA;{&#xD;&#xA;   if (Double.TryParse(row[in_strColumn].ToString(), out double doubleValue))&#xD;&#xA;    {&#xD;&#xA;        row[in_strColumn] = DateTime.FromOADate(doubleValue).ToString();&#xD;&#xA;    }&#xD;&#xA;});&#xD;&#xA;var filteredRows = io_dtRawData.AsEnumerable()&#xD;&#xA;    .Where(r =&gt; !r.IsNull(in_strColumn) &amp;&amp;&#xD;&#xA;    DateTime.TryParse(r.Field&lt;string&gt;(in_strColumn), out _) &amp;&amp;&#xD;&#xA;    DateTime.Parse(r.Field&lt;string&gt;(in_strColumn)).Year == in_datePeriod.Year &amp;&amp;&#xD;&#xA;    DateTime.Parse(r.Field&lt;string&gt;(in_strColumn)).Month == in_datePeriod.Month);&#xD;&#xA;//var filteredRows = io_dtRawData.AsEnumerable()&#xD;&#xA;//    .Where(r =&gt; !r.IsNull(in_strColumn) &amp;&amp;&#xD;&#xA;//&#x9;DateTime.FromOADate(Convert.ToDouble(r.Field&lt;double&gt;(in_strColumn))).Year == in_datePeriod.Year &amp;&amp;&#xD;&#xA;//&#x9;DateTime.FromOADate(Convert.ToDouble(r.Field&lt;double&gt;(in_strColumn))).Month == in_datePeriod.Month);&#xD;&#xA;if (filteredRows.Count() == 0)&#xD;&#xA;{&#xD;&#xA;&#x9;Console.WriteLine(&quot;Empty...&quot;);&#xD;&#xA;&#x9;out_dtFilteredData = io_dtRawData.Clone();&#xD;&#xA;&#x9;Console.WriteLine(&quot;Clearing datatable . . .&quot;);&#xD;&#xA;&#x9;out_dtFilteredData.Rows.Clear();&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;DataRow newRow = out_dtFilteredData.NewRow();&#xD;&#xA;&#x9;foreach (DataColumn column in out_dtFilteredData.Columns)&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;    newRow[column.ColumnName] = string.Empty;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;out_dtFilteredData.Rows.Add(newRow);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;&#x9;out_dtFilteredData = filteredRows.CopyToDataTable();&#xD;&#xA;}" DisplayName="Invoke Code - Filtering DataTable" sap:VirtualizedContainerService.HintSize="334,165" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
           <ui:InvokeCode.Arguments>
             <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtRawData">
               <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtRawData" />
@@ -265,14 +264,11 @@
             <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtFilteredData">
               <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtFilteredData" />
             </OutArgument>
-            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isEmpty">
-              <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="isEmpty" />
-            </OutArgument>
           </ui:InvokeCode.Arguments>
         </ui:InvokeCode>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -283,12 +279,12 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Throw Exception="[New Exception(exception.InnerException.ToString)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_2" />
+            <Throw Exception="[New Exception(exception.InnerException.ToString)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:DeleteFileX DisplayName="Delete File - in_strFilePath" sap:VirtualizedContainerService.HintSize="449.6,120.8" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[in_strFilePath]" />
-    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dtFilteredData]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="449.6,139.2" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[listSheets(0)]" WorkbookPath="[in_strFilePath]" />
+    <ui:DeleteFileX DisplayName="Delete File - in_strFilePath" sap:VirtualizedContainerService.HintSize="450,120" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[in_strFilePath]" />
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dtFilteredData]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="450,139" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[listSheets(0)]" WorkbookPath="[in_strFilePath]" />
   </Sequence>
 </Activity>
