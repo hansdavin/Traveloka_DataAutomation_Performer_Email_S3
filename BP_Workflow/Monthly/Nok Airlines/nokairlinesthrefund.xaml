@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1234,13038</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,14035</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>webbeds_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -245,18 +245,10 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:MultipleAssign sap2010:Annotation.AnnotationText="For monthly run the path and file name is different, folder for daily &quot;yyyy-MM-dd&quot; for monthly &quot;yyyy-MM&quot; and for file name daily &quot;ddMMMyy&quot; for monthly &quot;MMMyy&quot;" DisplayName="Multiple Assign - for path folder" sap:VirtualizedContainerService.HintSize="848,260" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="For monthly run the path and file name is different, folder for daily &quot;yyyy-MM-dd&quot; for monthly &quot;yyyy-MM&quot; and for file name daily &quot;ddMMMyy&quot; for monthly &quot;MMMyy&quot;" DisplayName="Multiple Assign - for path folder" sap:VirtualizedContainerService.HintSize="848,260" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[strFilePath]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[Path.Combine(in_TransactionItem.SpecificContent("PathMasterFolder").ToString, in_TransactionItem.SpecificContent("Key").ToString, in_datePeriod.Year.ToString, in_datePeriod.ToString("yyyy-MM"), $"Traveloka_{in_TransactionItem.SpecificContent("BPID").ToString}_{in_datePeriod.ToString("MMMyy")}.{in_TransactionItem.SpecificContent("File Type").ToString}")]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">[strFolderPath]</OutArgument>
             </ui:AssignOperation.To>
@@ -264,7 +256,15 @@
               <InArgument x:TypeArguments="x:String">[Path.Combine(in_TransactionItem.SpecificContent("PathMasterFolder").ToString, in_TransactionItem.SpecificContent("Key").ToString, in_datePeriod.Year.ToString, in_datePeriod.ToString("yyyy-MM"))]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strFilePath]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[Path.Combine(strFolderPath, $"Traveloka_{in_TransactionItem.SpecificContent("BPID").ToString}_{startDate.ToString("ddMMMyy")}-{endDate.ToString("ddMMMyy")}.{in_TransactionItem.SpecificContent("File Type").ToString}")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">[strRawFolderPath]</OutArgument>
             </ui:AssignOperation.To>
@@ -524,7 +524,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[email.Subject.ToLower.Contains(in_datePeriod.ToString(&quot;MMM&quot;).ToLower) AndAlso&#xD;&#xA;email.Subject.Contains(in_datePeriod.ToString(&quot;yy&quot;))]" DisplayName="If body has period month" sap:VirtualizedContainerService.HintSize="530,451" sap2010:WorkflowViewState.IdRef="If_39">
+                      <If Condition="[email.Subject.ToLower.Contains(in_datePeriod.ToString(&quot;MMM&quot;).ToLower) AndAlso&#xA;email.Subject.Contains(in_datePeriod.ToString(&quot;yy&quot;))]" DisplayName="If body has period month" sap:VirtualizedContainerService.HintSize="530,451" sap2010:WorkflowViewState.IdRef="If_39">
                         <If.Then>
                           <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,190" sap2010:WorkflowViewState.IdRef="Sequence_125">
                             <sap:WorkflowViewStateService.ViewState>
@@ -553,7 +553,7 @@
                         </If.Else>
                       </If>
                     </Sequence>
-                    <If Condition="[isSubjectValid AndAlso isPeriodValid AndAlso &#xD;&#xA;email.Attachments.Count &gt; 0 AndAlso &#xD;&#xA;email.Attachments.First.name.ToString.Contains(&quot;INVC&quot;)]" DisplayName="If attachment and subject is correct" sap:VirtualizedContainerService.HintSize="592,960" sap2010:WorkflowViewState.IdRef="If_31">
+                    <If Condition="[isSubjectValid AndAlso isPeriodValid AndAlso &#xD;&#xA;email.Attachments.Count &gt; 0 AndAlso &#xD;&#xA;email.Attachments.Any(Function(attachment) attachment.Name.Contains(&quot;INVC&quot;))]" DisplayName="If attachment and subject is correct" sap:VirtualizedContainerService.HintSize="592,960" sap2010:WorkflowViewState.IdRef="If_31">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -695,11 +695,7 @@
           </Sequence>
           <Sequence DisplayName="Download attachments" sap:VirtualizedContainerService.HintSize="752,1417" sap2010:WorkflowViewState.IdRef="Sequence_128">
             <Sequence.Variables>
-              <Variable x:TypeArguments="scg:List(x:String)" Name="listOfDeletedItems">
-                <Variable.Default>
-                  <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="New List(Of String)" />
-                </Variable.Default>
-              </Variable>
+              <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="listOfDeletedItems" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
