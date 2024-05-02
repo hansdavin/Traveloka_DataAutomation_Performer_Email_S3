@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1234,14035</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,14055</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>webbeds_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -151,7 +151,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Main takeaways:&#xA;1. In monthly BP, set the date range according to the month of email's subject&#xA;2. Set global datetime in orchestrator asset to default (;)&#xA;3. Set global date end period in orchestrator&#xA;4. Check local folder path if file already exists or not" DisplayName="nokairlinessgrefund" sap:VirtualizedContainerService.HintSize="910,13970" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Main takeaways:&#xA;1. In monthly BP, set the date range according to the month of email's subject&#xA;2. Set global datetime in orchestrator asset to default (;)&#xA;3. Set global date end period in orchestrator&#xA;4. Check local folder path if file already exists or not" DisplayName="nokairlinessgrefund" sap:VirtualizedContainerService.HintSize="910,13990" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strFilePath" />
       <Variable x:TypeArguments="x:Boolean" Name="isFileExist" />
@@ -173,9 +173,9 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message start of workflow" sap:VirtualizedContainerService.HintSize="848,132" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;{0} [{1}]&quot;, in_TransactionItem.SpecificContent(&quot;PID&quot;).ToString, Now)]" />
-    <ui:SetAsset TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;GlobalVarAsset&quot;).ToString]" DisplayName="Set Asset - Reset global var" sap:VirtualizedContainerService.HintSize="848,232" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[&quot;;&quot;]" />
-    <If Condition="[Not in_isRerun]" DisplayName="If normal run, addmonths(-1)" sap:VirtualizedContainerService.HintSize="848,487" sap2010:WorkflowViewState.IdRef="If_22">
+    <ui:LogMessage DisplayName="Log Message start of workflow" sap:VirtualizedContainerService.HintSize="848,124" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;{0} [{1}]&quot;, in_TransactionItem.SpecificContent(&quot;PID&quot;).ToString, Now)]" />
+    <ui:SetAsset TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;GlobalVarAsset&quot;).ToString]" DisplayName="Set Asset - Reset global var" sap:VirtualizedContainerService.HintSize="848,224" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[&quot;;&quot;]" />
+    <If Condition="[Not in_isRerun]" DisplayName="If normal run, addmonths(-1)" sap:VirtualizedContainerService.HintSize="848,479" sap2010:WorkflowViewState.IdRef="If_22">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -215,7 +215,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:MultipleAssign DisplayName="Set earliest and latest date for writing log" sap:VirtualizedContainerService.HintSize="848,203" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+    <ui:MultipleAssign DisplayName="Set earliest and latest date for writing log" sap:VirtualizedContainerService.HintSize="848,195" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
@@ -245,7 +245,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:MultipleAssign sap2010:Annotation.AnnotationText="For monthly run the path and file name is different, folder for daily &quot;yyyy-MM-dd&quot; for monthly &quot;yyyy-MM&quot; and for file name daily &quot;ddMMMyy&quot; for monthly &quot;MMMyy&quot;" DisplayName="Multiple Assign - for path folder" sap:VirtualizedContainerService.HintSize="848,260" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="For monthly run the path and file name is different, folder for daily &quot;yyyy-MM-dd&quot; for monthly &quot;yyyy-MM&quot; and for file name daily &quot;ddMMMyy&quot; for monthly &quot;MMMyy&quot;" DisplayName="Multiple Assign - for path folder" sap:VirtualizedContainerService.HintSize="848,252" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
@@ -280,7 +280,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Set_EmailDate_Asset.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="848,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Workflow\Set_EmailDate_Asset.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Set_EmailDate_Asset.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="848,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Workflow\Set_EmailDate_Asset.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateStartPeriod">[startDate]</InArgument>
         <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateEndPeriod">[endDate]</InArgument>
@@ -288,7 +288,7 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_assetName">[in_Config("GlobalVarAsset").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Sequence DisplayName="Initial check" sap:VirtualizedContainerService.HintSize="848,1598" sap2010:WorkflowViewState.IdRef="Sequence_111">
+    <Sequence DisplayName="Initial check" sap:VirtualizedContainerService.HintSize="848,1574" sap2010:WorkflowViewState.IdRef="Sequence_111">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Default="False" Name="salesReportAvailable" />
       </Sequence.Variables>
@@ -298,7 +298,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Assign - get all files inside raw file folder" sap:VirtualizedContainerService.HintSize="628,122" sap2010:WorkflowViewState.IdRef="Assign_31">
+      <Assign DisplayName="Assign - get all files inside raw file folder" sap:VirtualizedContainerService.HintSize="628,114" sap2010:WorkflowViewState.IdRef="Assign_31">
         <Assign.To>
           <OutArgument x:TypeArguments="s:String[]">[arrRawFileNames]</OutArgument>
         </Assign.To>
@@ -306,7 +306,7 @@
           <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(Path.Combine(strRawFolderPath, "Sales Report"))]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each file names" sap:VirtualizedContainerService.HintSize="628,889" sap2010:WorkflowViewState.IdRef="ForEach`1_40" Values="[arrRawFileNames]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each file names" sap:VirtualizedContainerService.HintSize="628,881" sap2010:WorkflowViewState.IdRef="ForEach`1_40" Values="[arrRawFileNames]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
@@ -394,8 +394,8 @@
         </If.Else>
       </If>
     </Sequence>
-    <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists for final file" Exists="[isFileExist]" sap:VirtualizedContainerService.HintSize="848,130" sap2010:WorkflowViewState.IdRef="PathExists_3" Path="[strFilePath]" PathType="File" />
-    <If sap2010:Annotation.AnnotationText="If file doesn't exists in local folder or rerun in config sheet is set to true" Condition="[Not isFileExist Or in_isRerun]" DisplayName="If - File does not exist or rerun" sap:VirtualizedContainerService.HintSize="848,10600" sap2010:WorkflowViewState.IdRef="If_3">
+    <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists for final file" Exists="[isFileExist]" sap:VirtualizedContainerService.HintSize="848,122" sap2010:WorkflowViewState.IdRef="PathExists_3" Path="[strFilePath]" PathType="File" />
+    <If sap2010:Annotation.AnnotationText="If file doesn't exists in local folder or rerun in config sheet is set to true" Condition="[Not isFileExist Or in_isRerun]" DisplayName="If - File does not exist or rerun" sap:VirtualizedContainerService.HintSize="848,10700" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -404,7 +404,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="814,10208" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="814,10308" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -446,7 +446,7 @@
               </Sequence>
             </If.Else>
           </If>
-          <Sequence DisplayName="Filtering emails" sap:VirtualizedContainerService.HintSize="752,2455" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence DisplayName="Filtering emails" sap:VirtualizedContainerService.HintSize="752,2447" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="intListMailIndex" />
               <Variable x:TypeArguments="x:Boolean" Default="False" Name="isSubjectValid" />
@@ -553,7 +553,7 @@
                         </If.Else>
                       </If>
                     </Sequence>
-                    <If Condition="[isSubjectValid AndAlso isPeriodValid AndAlso &#xD;&#xA;email.Attachments.Count &gt; 0 AndAlso &#xD;&#xA;email.Attachments.Any(Function(attachment) attachment.Name.Contains(&quot;INVC&quot;))]" DisplayName="If attachment and subject is correct" sap:VirtualizedContainerService.HintSize="592,960" sap2010:WorkflowViewState.IdRef="If_31">
+                    <If Condition="[isSubjectValid AndAlso isPeriodValid AndAlso &#xA;email.Attachments.Count &gt; 0 AndAlso &#xA;email.Attachments.Any(Function(attachment) attachment.Name.Contains(&quot;INVC&quot;))]" DisplayName="If attachment and subject is correct" sap:VirtualizedContainerService.HintSize="592,960" sap2010:WorkflowViewState.IdRef="If_31">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -693,7 +693,7 @@
               </ui:ForEachRow.Body>
             </ui:ForEachRow>
           </Sequence>
-          <Sequence DisplayName="Download attachments" sap:VirtualizedContainerService.HintSize="752,1417" sap2010:WorkflowViewState.IdRef="Sequence_128">
+          <Sequence DisplayName="Download attachments" sap:VirtualizedContainerService.HintSize="752,1393" sap2010:WorkflowViewState.IdRef="Sequence_128">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="listOfDeletedItems" />
             </Sequence.Variables>
@@ -704,27 +704,27 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="548,132" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Download attachment&quot;]" />
             <ui:SaveMailAttachments Attachments="[ienAttachment]" DisplayName="Save Attachments with correct extension" ExcludeInlineAttachments="False" Filter="[Path.GetExtension(in_TransactionItem.SpecificContent(&quot;File Name Attachment&quot;).ToString)]" FolderPath="[strRawFolderPath]" sap:VirtualizedContainerService.HintSize="548,128" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_4" Message="[correctEmailFound]" OverwriteExisting="True" />
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="548,924" sap2010:WorkflowViewState.IdRef="ForEach`1_46" Values="[ienAttachment]">
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="548,908" sap2010:WorkflowViewState.IdRef="ForEach`1_46" Values="[ienAttachment]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:String" Name="attachment" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,760" sap2010:WorkflowViewState.IdRef="Sequence_138">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,752" sap2010:WorkflowViewState.IdRef="Sequence_138">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[Not Path.GetFileNameWithoutExtension(attachment).Contains(&quot;THC&quot;)]" sap:VirtualizedContainerService.HintSize="450,675" sap2010:WorkflowViewState.IdRef="If_44">
+                    <If Condition="[Not Path.GetFileNameWithoutExtension(attachment).Contains(&quot;THC&quot;)]" sap:VirtualizedContainerService.HintSize="450,667" sap2010:WorkflowViewState.IdRef="If_44">
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,414" sap2010:WorkflowViewState.IdRef="Sequence_139">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,406" sap2010:WorkflowViewState.IdRef="Sequence_139">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:Delete ContinueOnError="{x:Null}" ResourceFile="{x:Null}" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[attachment]" />
+                          <ui:Delete ContinueOnError="{x:Null}" ResourceFile="{x:Null}" sap:VirtualizedContainerService.HintSize="354,165" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[attachment]" />
                           <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="354,156" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_2" ItemToAppend="[attachment]" List="[listOfDeletedItems]" />
                         </Sequence>
                       </If.Then>
@@ -757,29 +757,49 @@
               </Assign.Value>
             </Assign>
           </Sequence>
-          <Sequence DisplayName="Compare name of attachment files" sap:VirtualizedContainerService.HintSize="752,1419" sap2010:WorkflowViewState.IdRef="Sequence_127">
+          <Sequence DisplayName="Compare name of attachment files" sap:VirtualizedContainerService.HintSize="752,1623" sap2010:WorkflowViewState.IdRef="Sequence_127">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Default="True" Name="allFileNamesFound" />
+              <Variable x:TypeArguments="x:String" Name="fileNamePattern" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="628,132" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Compare name of attachment files&quot;]" />
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="628,700" sap2010:WorkflowViewState.IdRef="ForEach`1_43" Values="[ienAttachment]">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="628,124" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Compare name of attachment files&quot;]" />
+            <Assign DisplayName="File name pattern" sap:VirtualizedContainerService.HintSize="628,114" sap2010:WorkflowViewState.IdRef="Assign_42">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[fileNamePattern]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">INVC([A-Za-z0-9\-]+)</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="628,806" sap2010:WorkflowViewState.IdRef="ForEach`1_43" Values="[ienAttachment]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:String" Name="attachment" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,536" sap2010:WorkflowViewState.IdRef="Sequence_129">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,650" sap2010:WorkflowViewState.IdRef="Sequence_129">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="cleanFileName" />
+                    </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[Not refundNames.Any(Function(c) c.ToLower.Contains(Path.GetFileNameWithoutExtension(attachment).Split(&quot; &quot;).First.ToLower))]" DisplayName="If refund names does not contain" sap:VirtualizedContainerService.HintSize="530,451" sap2010:WorkflowViewState.IdRef="If_41">
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_43">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[cleanFileName]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[Regex.Match(Path.GetFileNameWithoutExtension(attachment),fileNamePattern).Value]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <If Condition="[Not refundNames.Any(Function(c) c.ToLower.Contains(cleanFileName.ToLower))]" DisplayName="If refund names does not contain" sap:VirtualizedContainerService.HintSize="530,451" sap2010:WorkflowViewState.IdRef="If_41">
                       <If.Then>
                         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,190" sap2010:WorkflowViewState.IdRef="Sequence_130">
                           <sap:WorkflowViewStateService.ViewState>
@@ -839,7 +859,7 @@
               </If.Else>
             </If>
           </Sequence>
-          <Sequence DisplayName="Processing attachment" sap:VirtualizedContainerService.HintSize="752,3095" sap2010:WorkflowViewState.IdRef="Sequence_101">
+          <Sequence DisplayName="Processing attachment" sap:VirtualizedContainerService.HintSize="752,3023" sap2010:WorkflowViewState.IdRef="Sequence_101">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dtFinalRefundDatatable" />
               <Variable x:TypeArguments="sd:DataTable" Name="dtRefundExcel" />
@@ -852,39 +872,39 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Start processing files" sap:VirtualizedContainerService.HintSize="548,132" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Compiling refund files&quot;]" />
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each attachment downloaded" sap:VirtualizedContainerService.HintSize="548,1309" sap2010:WorkflowViewState.IdRef="ForEach`1_38" Values="[ienAttachment]">
+            <ui:LogMessage DisplayName="Start processing files" sap:VirtualizedContainerService.HintSize="548,124" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Compiling refund files&quot;]" />
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each attachment downloaded" sap:VirtualizedContainerService.HintSize="548,1261" sap2010:WorkflowViewState.IdRef="ForEach`1_38" Values="[ienAttachment]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:String" Name="attachment" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body of for each file downloaded" sap:VirtualizedContainerService.HintSize="512,1145" sap2010:WorkflowViewState.IdRef="Sequence_94">
+                  <Sequence DisplayName="Body of for each file downloaded" sap:VirtualizedContainerService.HintSize="512,1105" sap2010:WorkflowViewState.IdRef="Sequence_94">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="EXCEL" />
-                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[attachment]">
+                    <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="450,165" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="EXCEL" />
+                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="450,422" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[attachment]">
                       <ui:ExcelApplicationScope.Body>
                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,288" sap2010:WorkflowViewState.IdRef="Sequence_134">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,280" sap2010:WorkflowViewState.IdRef="Sequence_134">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:ExcelGetWorkbookSheet DisplayName="Get Workbook Sheet" sap:VirtualizedContainerService.HintSize="354,120" sap2010:WorkflowViewState.IdRef="ExcelGetWorkbookSheet_1" Index="0" Sheet="[sheetName]" />
+                            <ui:ExcelGetWorkbookSheet DisplayName="Get Workbook Sheet" sap:VirtualizedContainerService.HintSize="354,112" sap2010:WorkflowViewState.IdRef="ExcelGetWorkbookSheet_1" Index="0" Sheet="[sheetName]" />
                             <ui:ExcelReadRange AddHeaders="True" DataTable="[dtRefundExcel]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="354,83" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" Range="A6" SheetName="[sheetName]" />
                           </Sequence>
                         </ActivityAction>
                       </ui:ExcelApplicationScope.Body>
                     </ui:ExcelApplicationScope>
-                    <ui:FilterDataTable DataTable="[dtRefundExcel]" DisplayName="Filter Data Table only has data in date" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="450,201" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtRefundExcel]" SelectColumnsMode="Keep">
+                    <ui:FilterDataTable DataTable="[dtRefundExcel]" DisplayName="Filter Data Table only has data in date" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="450,193" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtRefundExcel]" SelectColumnsMode="Keep">
                       <ui:FilterDataTable.Filters>
                         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                           <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
@@ -900,7 +920,7 @@
                         </scg:List>
                       </ui:FilterDataTable.SelectColumns>
                     </ui:FilterDataTable>
-                    <If Condition="[dtFinalRefundDatatable Is Nothing]" DisplayName="If final datatable is not nothing" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="If_43">
+                    <If Condition="[dtFinalRefundDatatable Is Nothing]" DisplayName="If final datatable is not nothing" sap:VirtualizedContainerService.HintSize="450,84" sap2010:WorkflowViewState.IdRef="If_43">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -945,7 +965,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEach>
-            <Sequence DisplayName="Remove empty column" sap:VirtualizedContainerService.HintSize="548,824" sap2010:WorkflowViewState.IdRef="Sequence_141">
+            <Sequence DisplayName="Remove empty column" sap:VirtualizedContainerService.HintSize="548,808" sap2010:WorkflowViewState.IdRef="Sequence_141">
               <Sequence.Variables>
                 <Variable x:TypeArguments="scg:List(x:String)" Name="columnsToRemove" />
               </Sequence.Variables>
@@ -954,7 +974,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,132" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Remove empty column&quot;]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,124" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Remove empty column&quot;]" />
               <Assign DisplayName="find empty column" sap:VirtualizedContainerService.HintSize="452,123" sap2010:WorkflowViewState.IdRef="Assign_41">
                 <Assign.To>
                   <OutArgument x:TypeArguments="scg:List(x:String)">[columnsToRemove]</OutArgument>
