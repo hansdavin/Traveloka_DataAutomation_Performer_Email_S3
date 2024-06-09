@@ -1345,9 +1345,7 @@ contentPeriod.Year.ToString, contentPeriod.ToString("yyyy-MM-dd"))]</InArgument>
                                               <Sequence DisplayName="Update asset for monthly date lookup" sap:VirtualizedContainerService.HintSize="688,2110" sap2010:WorkflowViewState.IdRef="Sequence_135">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="x:String" Name="refundAsset" />
-                                                  <Variable x:TypeArguments="s:String[]" Name="arrayRefundAsset" />
                                                   <Variable x:TypeArguments="x:String" Name="tempStr" />
-                                                  <Variable x:TypeArguments="s:String[]" Name="finArrayRefundAsset" />
                                                   <Variable x:TypeArguments="x:String" Name="cellValue" />
                                                   <Variable x:TypeArguments="x:String" Name="cellLocation" />
                                                 </Sequence.Variables>
