@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>922.4,2678.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1233,2428</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Cebu_5J_Date_Column_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,10 +116,9 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Cebu_5J_Date_Column" sap:VirtualizedContainerService.HintSize="512,2613.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Cebu_5J_Date_Column" sap:VirtualizedContainerService.HintSize="512,2363" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtRaw" />
-      <Variable x:TypeArguments="x:String" Name="fileName" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtResult" />
       <Variable x:TypeArguments="scg:List(x:Int32)" Default="[New List(Of Integer)]" Name="listTop" />
       <Variable x:TypeArguments="scg:List(x:Int32)" Default="[New List(Of Integer)]" Name="listBottom" />
@@ -137,40 +136,40 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Convert MacAir 5J" sap:VirtualizedContainerService.HintSize="449.6,124.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Convert MacAir 5J&quot;]" />
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="449.6,548.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[in_pathRawFile]">
+    <ui:LogMessage DisplayName="Log Message Convert MacAir 5J" sap:VirtualizedContainerService.HintSize="450,124" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Convert MacAir 5J&quot;]" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="450,549" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[in_pathRawFile]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,407.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,407" sap2010:WorkflowViewState.IdRef="Sequence_13">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelGetWorkbookSheet DisplayName="Get Workbook Sheet" sap:VirtualizedContainerService.HintSize="353.6,112.8" sap2010:WorkflowViewState.IdRef="ExcelGetWorkbookSheet_1" Index="0" Sheet="[sheetName]" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="353.6,124.8" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;Read sheet : &quot; + sheetName]" />
-            <ui:ExcelReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dtRaw]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="353.6,83.2" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="[sheetName]" />
+            <ui:ExcelGetWorkbookSheet DisplayName="Get Workbook Sheet" sap:VirtualizedContainerService.HintSize="354,112" sap2010:WorkflowViewState.IdRef="ExcelGetWorkbookSheet_1" Index="0" Sheet="[sheetName]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,124" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;Read sheet : &quot; + sheetName]" />
+            <ui:ExcelReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dtRaw]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="354,83" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="[sheetName]" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtResult]" DisplayName="Read Range Result Header" sap:VirtualizedContainerService.HintSize="449.6,120" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="template" WorkbookPath="[in_pathTemplate]" />
-    <ui:ForEachRow ColumnNames="{x:Null}" ColumnCount="0" CurrentIndex="[index]" DataTable="[dtRaw]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="449.6,480.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtResult]" DisplayName="Read Range Result Header" sap:VirtualizedContainerService.HintSize="450,120" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="template" WorkbookPath="[in_pathTemplate]" />
+    <ui:ForEachRow ColumnNames="{x:Null}" ColumnCount="0" CurrentIndex="[index]" DataTable="[dtRaw]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="450,399" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,332" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,250" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[CurrentRow(0).ToString.ToLower.Contains(&quot;sales period&quot;)]" DisplayName="If sales period" sap:VirtualizedContainerService.HintSize="353.6,84.8" sap2010:WorkflowViewState.IdRef="If_3">
+            <If Condition="[CurrentRow(0).ToString.ToLower.Contains(&quot;sales period&quot;)]" DisplayName="If sales period" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="If_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -204,7 +203,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[CurrentRow(0).ToString.ToLower.Contains(&quot;transaction date&quot;) And String.IsNullOrEmpty(CurrentRow(6).ToString)]" DisplayName="If top &amp; date" sap:VirtualizedContainerService.HintSize="353.6,84.8" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[CurrentRow(0).ToString.ToLower.Contains(&quot;transaction date&quot;) And String.IsNullOrEmpty(CurrentRow(6).ToString)]" DisplayName="If top &amp; date" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -233,7 +232,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[CurrentRow(7).ToString.ToLower.Contains(&quot;php&quot;) And String.IsNullOrEmpty(CurrentRow(6).ToString)]" DisplayName="If bottom" sap:VirtualizedContainerService.HintSize="353.6,76" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[CurrentRow(7).ToString.ToLower.Contains(&quot;php&quot;) And String.IsNullOrEmpty(CurrentRow(6).ToString)]" DisplayName="If bottom" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="If_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -271,17 +270,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,124.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Sales Period : &quot; + salesPeriod]" />
-    <ui:ForEach x:TypeArguments="s:DateTime" CurrentIndex="[indexTable]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="449.6,84.8" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[listDate]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,124" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Sales Period : &quot; + salesPeriod]" />
+    <ui:ForEach x:TypeArguments="s:DateTime" CurrentIndex="[indexTable]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[listDate]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="s:DateTime">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="s:DateTime" Name="item" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,1114.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:Int32" Name="indexTemp" />
-            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -340,7 +336,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <ui:FilterDataTable DataTable="[dtResult]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="449.6,194.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtResult]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable DataTable="[dtResult]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="450,193" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtResult]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -367,19 +363,19 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <If Condition="[dtResult.RowCount = 0]" sap:VirtualizedContainerService.HintSize="449.6,570.4" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[dtResult.RowCount = 0]" sap:VirtualizedContainerService.HintSize="450,570" sap2010:WorkflowViewState.IdRef="If_4">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,297.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,297" sap2010:WorkflowViewState.IdRef="Sequence_14">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&#xD;&#xA;&quot;&quot;&#xD;&#xA;}]" DataTable="[dtResult]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="353.6,211.2" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&#xA;&quot;&quot;&#xA;}]" DataTable="[dtResult]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="354,209" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,102.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -388,13 +384,6 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dtResult]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="449.6,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="[in_pathResultFile]" />
-    <Sequence sap:VirtualizedContainerService.HintSize="449.6,128" sap2010:WorkflowViewState.IdRef="Sequence_8">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </Sequence>
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dtResult]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="450,139" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="[in_pathResultFile]" />
   </Sequence>
 </Activity>

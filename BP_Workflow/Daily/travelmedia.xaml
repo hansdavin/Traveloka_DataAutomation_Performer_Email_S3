@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>900,6628</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1233,6585</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>travelmedia_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -135,20 +135,13 @@
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Main takeaways:&#xA;1. Set global datetime in orchestrator asset to default (;)&#xA;2. Set global date end period in orchestrator&#xA;3. Check local folder path if file already exists or not&#xA;4. Daily: H-0" DisplayName="travelmedia" sap:VirtualizedContainerService.HintSize="910.4,6563.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Main takeaways:&#xA;1. Set global datetime in orchestrator asset to default (;)&#xA;2. Set global date end period in orchestrator&#xA;3. Check local folder path if file already exists or not&#xA;4. Daily: H-0" DisplayName="travelmedia" sap:VirtualizedContainerService.HintSize="910,6520" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strFilePath" />
       <Variable x:TypeArguments="x:Boolean" Name="isFileExist" />
       <Variable x:TypeArguments="x:String" Name="strFolderPath" />
-      <Variable x:TypeArguments="x:Boolean" Name="isFileNotRerunExist" />
-      <Variable x:TypeArguments="x:Boolean" Name="isFolderNotRerunExist" />
       <Variable x:TypeArguments="x:String" Name="strRawFolderPath" />
-      <Variable x:TypeArguments="x:String" Name="strRawFilePathQueue" />
-      <Variable x:TypeArguments="x:String" Name="strRawFilePath" />
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="listMailMessages" />
-      <Variable x:TypeArguments="x:Boolean" Name="isEmailFound" />
-      <Variable x:TypeArguments="x:String" Name="strFileNamePattern" />
-      <Variable x:TypeArguments="x:String" Name="strAttachmentId" />
       <Variable x:TypeArguments="s:String[]" Name="arrPattern" />
       <Variable x:TypeArguments="x:String" Name="strEmailSubjectConfig" />
       <Variable x:TypeArguments="x:String" Name="strEmailSubject" />
@@ -161,8 +154,6 @@
       <Variable x:TypeArguments="snm:MailMessage" Name="correctEmailFound" />
       <Variable x:TypeArguments="x:String" Name="attachmentName" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtRawData" />
-      <Variable x:TypeArguments="x:String" Name="capturedDate" />
-      <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="ienFinalAttachment" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="listSheets" />
       <Variable x:TypeArguments="x:String" Name="strTable" />
       <Variable x:TypeArguments="x:String" Name="strColumn" />
@@ -178,9 +169,9 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="848,132.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;{0} [{1}]&quot;, in_TransactionItem.SpecificContent(&quot;PID&quot;).ToString, Now)]" />
-    <ui:SetAsset TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;GlobalVarAsset&quot;).ToString]" DisplayName="Set Asset - Reset global var" sap:VirtualizedContainerService.HintSize="848,234.4" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[&quot;;&quot;]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Set_EmailDate_Asset.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="848,153.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Workflow\Set_EmailDate_Asset.xaml">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="848,124" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;{0} [{1}]&quot;, in_TransactionItem.SpecificContent(&quot;PID&quot;).ToString, Now)]" />
+    <ui:SetAsset TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;GlobalVarAsset&quot;).ToString]" DisplayName="Set Asset - Reset global var" sap:VirtualizedContainerService.HintSize="848,224" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[&quot;;&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Set_EmailDate_Asset.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="848,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Workflow\Set_EmailDate_Asset.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateStartPeriod">[DateTime.MinValue]</InArgument>
         <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateEndPeriod">[in_datePeriod]</InArgument>
@@ -194,7 +185,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:MultipleAssign DisplayName="Multiple Assign - Path" sap:VirtualizedContainerService.HintSize="848,204" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign - Path" sap:VirtualizedContainerService.HintSize="848,195" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -452,7 +443,7 @@
                           </Catch>
                         </TryCatch.Catches>
                       </TryCatch>
-                      <If Condition="[(email.Subject.Contains(in_datePeriod.Day.ToString) AndAlso&#xD;&#xA;email.Subject.ToUpper.Contains(in_datePeriod.ToString(&quot;MMM&quot;).ToUpper) AndAlso&#xD;&#xA;email.Subject.Contains(in_datePeriod.ToString(&quot;yy&quot;))) AndAlso&#xD;&#xA;dateCaptured = in_datePeriod]" DisplayName="If - Validate date period" sap:VirtualizedContainerService.HintSize="529.6,455.2" sap2010:WorkflowViewState.IdRef="If_5">
+                      <If Condition="[(email.Subject.Contains(in_datePeriod.Day.ToString) AndAlso&#xA;email.Subject.ToUpper.Contains(in_datePeriod.ToString(&quot;MMM&quot;).ToUpper) AndAlso&#xA;email.Subject.Contains(in_datePeriod.ToString(&quot;yy&quot;))) AndAlso&#xA;dateCaptured = in_datePeriod]" DisplayName="If - Validate date period" sap:VirtualizedContainerService.HintSize="529.6,455.2" sap2010:WorkflowViewState.IdRef="If_5">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -850,18 +841,10 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Set_EmailDate_Asset.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="449.6,153.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Custom_Workflow\Set_EmailDate_Asset.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateStartPeriod">
-                                  <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateTime.MinValue" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateEndPeriod">
-                                  <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="dateX" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="scg:List(s:DateTime)" x:Key="in_listStartEndRange">
-                                  <VisualBasicValue x:TypeArguments="scg:List(s:DateTime)" ExpressionText="New List(of DateTime)" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_assetName">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;GlobalVarAsset&quot;).ToString" />
-                                </InArgument>
+                                <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateStartPeriod">[DateTime.MinValue]</InArgument>
+                                <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateEndPeriod">[dateX]</InArgument>
+                                <InArgument x:TypeArguments="scg:List(s:DateTime)" x:Key="in_listStartEndRange">[New List(of DateTime)]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_assetName">[in_Config("GlobalVarAsset").ToString]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
