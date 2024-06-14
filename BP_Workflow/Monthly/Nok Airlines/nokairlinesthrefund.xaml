@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1233,10747</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1233,11629</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>webbeds_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -156,7 +156,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Main takeaways:&#xA;1. In monthly BP, set the date range according to the month of email's subject&#xA;2. Set global datetime in orchestrator asset to default (;)&#xA;3. Set global date end period in orchestrator&#xA;4. Check local folder path if file already exists or not" DisplayName="nokairlinesthrefund" sap:VirtualizedContainerService.HintSize="962,10682" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Main takeaways:&#xA;1. In monthly BP, set the date range according to the month of email's subject&#xA;2. Set global datetime in orchestrator asset to default (;)&#xA;3. Set global date end period in orchestrator&#xA;4. Check local folder path if file already exists or not" DisplayName="nokairlinesthrefund" sap:VirtualizedContainerService.HintSize="962,11564" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strFilePath" />
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="isFileExist" />
@@ -465,7 +465,7 @@
       </If>
     </Sequence>
     <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists for final file" Exists="[isFileExist]" sap:VirtualizedContainerService.HintSize="900,122" sap2010:WorkflowViewState.IdRef="PathExists_3" Path="[strFilePath]" PathType="File" />
-    <If sap2010:Annotation.AnnotationText="If file doesn't exists in local folder or rerun in config sheet is set to true" Condition="[Not isFileExist Or in_isRerun]" DisplayName="If - File does not exist or rerun" sap:VirtualizedContainerService.HintSize="900,8903" sap2010:WorkflowViewState.IdRef="If_3">
+    <If sap2010:Annotation.AnnotationText="If file doesn't exists in local folder or rerun in config sheet is set to true" Condition="[Not isFileExist Or in_isRerun]" DisplayName="If - File does not exist or rerun" sap:VirtualizedContainerService.HintSize="900,9785" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -474,7 +474,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="866,8511" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="866,9393" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -811,7 +811,7 @@
               </ui:ForEachRow.Body>
             </ui:ForEachRow>
           </Sequence>
-          <Sequence DisplayName="Compare name of attachment files" sap:VirtualizedContainerService.HintSize="804,1322" sap2010:WorkflowViewState.IdRef="Sequence_127">
+          <Sequence DisplayName="Compare name of attachment files" sap:VirtualizedContainerService.HintSize="804,2204" sap2010:WorkflowViewState.IdRef="Sequence_127">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Default="True" Name="allFileNamesFound" />
               <Variable x:TypeArguments="x:String" Name="fileNamePattern" />
@@ -822,8 +822,9 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,124" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Compare name of attachment files&quot;]" />
-            <Assign DisplayName="File name pattern" sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_42">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="724,124" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Compare name of attachment files&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="724,124" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;List refund name from sales: &quot; + String.Join(&quot;,&quot;c, listRefundFromSales) + &quot; | | &quot; + &quot; List attachment names downloaded: &quot; + String.Join(&quot;,&quot;c, listAttachmentNames)]" />
+            <Assign DisplayName="File name pattern" sap:VirtualizedContainerService.HintSize="724,114" sap2010:WorkflowViewState.IdRef="Assign_42">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[fileNamePattern]</OutArgument>
               </Assign.To>
@@ -831,7 +832,7 @@
                 <InArgument x:TypeArguments="x:String">INVC([A-Za-z0-9\-]+)</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[Not listRefundFromSales.Count = listAttachmentNames.Count]" DisplayName="If length is not the same" sap:VirtualizedContainerService.HintSize="530,499" sap2010:WorkflowViewState.IdRef="If_55">
+            <If Condition="[Not listRefundFromSales.Count = listAttachmentNames.Count]" DisplayName="If length is not the same" sap:VirtualizedContainerService.HintSize="724,1257" sap2010:WorkflowViewState.IdRef="If_55">
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_164">
                   <sap:WorkflowViewStateService.ViewState>
@@ -850,19 +851,19 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,136" sap2010:WorkflowViewState.IdRef="Sequence_165">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="690,894" sap2010:WorkflowViewState.IdRef="Sequence_165">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="ForEach`1_70" Values="[listRefundFromSales]">
+                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="628,806" sap2010:WorkflowViewState.IdRef="ForEach`1_70" Values="[listRefundFromSales]">
                     <ui:ForEach.Body>
                       <ActivityAction x:TypeArguments="x:String">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:String" Name="salesString" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,650" sap2010:WorkflowViewState.IdRef="Sequence_155">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,659" sap2010:WorkflowViewState.IdRef="Sequence_155">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="cleanFileName" />
                           </Sequence.Variables>
@@ -879,9 +880,9 @@
                               <InArgument x:TypeArguments="x:String">[Regex.Match(salesString,fileNamePattern).Value]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <If Condition="[Not listAttachmentNames.Any(Function(c) c.ToLower.Contains(cleanFileName.ToLower))]" DisplayName="If refund names does not contain" sap:VirtualizedContainerService.HintSize="530,451" sap2010:WorkflowViewState.IdRef="If_53">
+                          <If Condition="[Not listAttachmentNames.Any(Function(c) c.ToLower.Contains(cleanFileName.ToLower))]" DisplayName="If refund names does not contain" sap:VirtualizedContainerService.HintSize="530,457" sap2010:WorkflowViewState.IdRef="If_53">
                             <If.Then>
-                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,190" sap2010:WorkflowViewState.IdRef="Sequence_156">
+                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_156">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -898,7 +899,7 @@
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,100" sap2010:WorkflowViewState.IdRef="Sequence_157">
+                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_157">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -912,15 +913,15 @@
                     </ui:ForEach.Body>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ForEach>
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[Not allFileNamesFound]" DisplayName="If not all names found" sap:VirtualizedContainerService.HintSize="530,465" sap2010:WorkflowViewState.IdRef="If_42">
+            <If Condition="[Not allFileNamesFound]" DisplayName="If not all names found" sap:VirtualizedContainerService.HintSize="724,465" sap2010:WorkflowViewState.IdRef="If_42">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
