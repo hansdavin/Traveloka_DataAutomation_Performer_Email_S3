@@ -543,7 +543,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,124" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Validate email period&quot;]" />
-                      <If Condition="[isAttachmentValid AndAlso&#xD;&#xA;fileNameToDownload.ToLower.Contains(in_datePeriod.ToString(&quot;MMM&quot;).ToLower) AndAlso&#xD;&#xA;fileNameToDownload.Contains(in_datePeriod.ToString(&quot;dd&quot;)) AndAlso&#xD;&#xA;fileNameToDownload.Contains(in_datePeriod.ToString(&quot;yy&quot;))]" DisplayName="If attachment contains the correct date" sap:VirtualizedContainerService.HintSize="530,457" sap2010:WorkflowViewState.IdRef="If_45">
+                      <If Condition="[Not String.IsNullOrEmpty(fileNameToDownload) AndAlso&#xD;&#xA;fileNameToDownload.ToLower.Contains(in_datePeriod.ToString(&quot;MMM&quot;).ToLower) AndAlso&#xD;&#xA;fileNameToDownload.Contains(in_datePeriod.ToString(&quot;dd&quot;)) AndAlso&#xD;&#xA;fileNameToDownload.Contains(in_datePeriod.ToString(&quot;yy&quot;))]" DisplayName="If attachment contains the correct date" sap:VirtualizedContainerService.HintSize="530,457" sap2010:WorkflowViewState.IdRef="If_45">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
