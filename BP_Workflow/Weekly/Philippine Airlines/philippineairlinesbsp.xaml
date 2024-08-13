@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1233,13336</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1233,13828</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>lotustours_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -162,7 +162,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Main takeaways:&#xA;1. In biweekly BP, set the date range according to the start and end date of email's subject&#xA;2. Set global datetime in orchestrator asset to default (;)&#xA;3. Set global date end period in orchestrator&#xA;4. Check local folder path if file already exists or not" DisplayName="philippineairlinesbsp" sap:VirtualizedContainerService.HintSize="1104,13271" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Main takeaways:&#xA;1. In biweekly BP, set the date range according to the start and end date of email's subject&#xA;2. Set global datetime in orchestrator asset to default (;)&#xA;3. Set global date end period in orchestrator&#xA;4. Check local folder path if file already exists or not" DisplayName="philippineairlinesbsp" sap:VirtualizedContainerService.HintSize="1104,13763" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strFilePath" />
       <Variable x:TypeArguments="x:Boolean" Name="isFileExist" />
@@ -341,7 +341,7 @@ New DateTime(in_datePeriod.Year, in_datePeriod.Month, 23))))]</InArgument>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
     <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists for final file" Exists="[isFileExist]" sap:VirtualizedContainerService.HintSize="1042,122" sap2010:WorkflowViewState.IdRef="PathExists_3" Path="[strFilePath]" PathType="File" />
-    <If sap2010:Annotation.AnnotationText="If file doesn't exists in local folder or rerun in config sheet is set to true" Condition="[Not isFileExist Or in_isRerun]" DisplayName="If - File does not exist or rerun" sap:VirtualizedContainerService.HintSize="1042,11172" sap2010:WorkflowViewState.IdRef="If_3">
+    <If sap2010:Annotation.AnnotationText="If file doesn't exists in local folder or rerun in config sheet is set to true" Condition="[Not isFileExist Or in_isRerun]" DisplayName="If - File does not exist or rerun" sap:VirtualizedContainerService.HintSize="1042,11664" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -350,7 +350,7 @@ New DateTime(in_datePeriod.Year, in_datePeriod.Month, 23))))]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1008,10780" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1008,11272" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -762,7 +762,7 @@ New DateTime(in_datePeriod.Year, in_datePeriod.Month, 23))))]</InArgument>
             </ui:ForEach>
           </Sequence>
           <ui:LogMessage DisplayName="End of filtering emails" sap:VirtualizedContainerService.HintSize="946,124" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[in_TransactionItem.SpecificContent(&quot;PID&quot;).ToString + &quot;: Filtering email done&quot;]" />
-          <Sequence DisplayName="Processing attachment" sap:VirtualizedContainerService.HintSize="946,6591" sap2010:WorkflowViewState.IdRef="Sequence_101">
+          <Sequence DisplayName="Processing attachment" sap:VirtualizedContainerService.HintSize="946,7083" sap2010:WorkflowViewState.IdRef="Sequence_101">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="ienAttachment" />
             </Sequence.Variables>
@@ -773,13 +773,13 @@ New DateTime(in_datePeriod.Year, in_datePeriod.Month, 23))))]</InArgument>
             </sap:WorkflowViewStateService.ViewState>
             <ui:LogMessage DisplayName="Start processing email" sap:VirtualizedContainerService.HintSize="788,124" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[in_TransactionItem.SpecificContent(&quot;PID&quot;).ToString + &quot;: Downloading attachment...&quot;]" />
             <ui:SaveMailAttachments Attachments="[ienAttachment]" DisplayName="Save Attachments with correct extension" ExcludeInlineAttachments="False" Filter="[Path.GetExtension(in_TransactionItem.SpecificContent(&quot;File Name Attachment&quot;).ToString)]" FolderPath="[strRawFolderPath]" sap:VirtualizedContainerService.HintSize="882,120" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_3" Message="[correctEmailFound]" OverwriteExisting="True" />
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each attachment downloaded" sap:VirtualizedContainerService.HintSize="882,6236" sap2010:WorkflowViewState.IdRef="ForEach`1_38" Values="[ienAttachment]">
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each attachment downloaded" sap:VirtualizedContainerService.HintSize="882,6728" sap2010:WorkflowViewState.IdRef="ForEach`1_38" Values="[ienAttachment]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:String" Name="attachment" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body of for each file downloaded" sap:VirtualizedContainerService.HintSize="846,6089" sap2010:WorkflowViewState.IdRef="Sequence_94">
+                  <Sequence DisplayName="Body of for each file downloaded" sap:VirtualizedContainerService.HintSize="846,6581" sap2010:WorkflowViewState.IdRef="Sequence_94">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="isFolderPathExists" />
                       <Variable x:TypeArguments="x:String" Name="processedRawFilePath" />
@@ -960,15 +960,11 @@ New DateTime(in_datePeriod.Year, in_datePeriod.Month, 23))))]</InArgument>
                       </ui:InvokePowerShell>
                       <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Delay_1" />
                     </Sequence>
-                    <Sequence DisplayName="Clean converted CSV file" sap:VirtualizedContainerService.HintSize="784,2787" sap2010:WorkflowViewState.IdRef="Sequence_131">
+                    <Sequence DisplayName="Clean converted CSV file" sap:VirtualizedContainerService.HintSize="784,3279" sap2010:WorkflowViewState.IdRef="Sequence_131">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="sd:DataTable" Name="dtExcel" />
                         <Variable x:TypeArguments="sd:DataTable" Name="dtFilteredData" />
-                        <Variable x:TypeArguments="x:Boolean" Name="refundFlag">
-                          <Variable.Default>
-                            <Literal x:TypeArguments="x:Boolean" />
-                          </Variable.Default>
-                        </Variable>
+                        <Variable x:TypeArguments="x:Boolean" Default="False" Name="refundFlag" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -977,14 +973,59 @@ New DateTime(in_datePeriod.Year, in_datePeriod.Month, 23))))]</InArgument>
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:LogMessage DisplayName="Start cleaning converted CSV File" sap:VirtualizedContainerService.HintSize="722,124" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Start cleaning converted CSV file&quot;]" />
                       <ui:ReadCsvFile DataTable="[dtExcel]" Delimitator="Comma" DisplayName="Read CSV" FilePath="[processedRawFilePath]" sap:VirtualizedContainerService.HintSize="722,186" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
-                      <Assign DisplayName="Re assign header title because of imperfect source PDF" sap:VirtualizedContainerService.HintSize="722,114" sap2010:WorkflowViewState.IdRef="Assign_38">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[dtExcel.Columns("Sale").ColumnName]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">Sale Status</InArgument>
-                        </Assign.Value>
-                      </Assign>
+                      <Sequence DisplayName="Rename column names" sap:VirtualizedContainerService.HintSize="722,606" sap2010:WorkflowViewState.IdRef="Sequence_163">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="scg:List(x:String)" Name="listOfColumnHeader" />
+                          <Variable x:TypeArguments="x:Int32" Name="index" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap2010:Annotation.AnnotationText="if there are future column header updates, please update here" DisplayName="Assign list of header" sap:VirtualizedContainerService.HintSize="532,146" sap2010:WorkflowViewState.IdRef="Assign_42">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="scg:List(x:String)">[listOfColumnHeader]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[New List(Of String) From 
+{
+"Issue Date", "Carrier", "Ticket Number", 
+"Sale Status", "IATA No","Remarks", "CURR","Total Tax", "Cash"," Credit", 
+"Comm", "Others", "Base Fare", "Net Fare", "Payable", "Tax Breakdown"
+}]</InArgument>
+                          </Assign.Value>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Assign>
+                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[index]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="532,340" sap2010:WorkflowViewState.IdRef="ForEach`1_42" Values="[listOfColumnHeader]">
+                          <ui:ForEach.Body>
+                            <ActivityAction x:TypeArguments="x:String">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:String" Name="header" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_164">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign DisplayName="Re assign header title because of inconsistent source PDF header" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_38">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[dtExcel.Columns(index).ColumnName]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[header]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ForEach.Body>
+                        </ui:ForEach>
+                      </Sequence>
                       <Assign DisplayName="Clone dtExcel" sap:VirtualizedContainerService.HintSize="722,114" sap2010:WorkflowViewState.IdRef="Assign_34">
                         <Assign.To>
                           <OutArgument x:TypeArguments="sd:DataTable">[dtFilteredData]</OutArgument>
