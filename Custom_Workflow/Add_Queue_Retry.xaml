@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>802.4,1488</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>742.4,1490.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Add_Queue_Retry_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -94,7 +94,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Add_Queue_Retry" sap:VirtualizedContainerService.HintSize="512,1423.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Add_Queue_Retry" sap:VirtualizedContainerService.HintSize="512,1425.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strQueueReference" />
       <Variable x:TypeArguments="x:Int32" Name="intAutoRetryMax" />
@@ -122,7 +122,6 @@
       <Assign.Value>
         <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[New List(Of String) From
 {
-	"travelmedia",
 	"hnhvietnam",
 	"citmalaysiasoa",
 	"citmalaysiadailysabre",
@@ -140,9 +139,9 @@
         <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Key").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[Not excludedBps.Contains(bpKey)]" DisplayName="If - Current BP key is not listed in excludedBps" sap:VirtualizedContainerService.HintSize="449.6,980.8" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[Not excludedBps.Contains(bpKey)]" DisplayName="If - Current BP key is not listed in excludedBps" sap:VirtualizedContainerService.HintSize="449.6,983.2" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,616.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,619.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
