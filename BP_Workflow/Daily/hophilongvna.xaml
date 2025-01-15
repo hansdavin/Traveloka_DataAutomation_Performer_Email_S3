@@ -386,7 +386,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="[intListMailIndex]" DisplayName="For Each email" sap:VirtualizedContainerService.HintSize="574,3950" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[listMailMessages]">
+            <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="[intListMailIndex]" DisplayName="For Each email" sap:VirtualizedContainerService.HintSize="575,3950" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[listMailMessages]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="snm:MailMessage">
                   <ActivityAction.Argument>
@@ -861,12 +861,24 @@
                                   </ui:InvokeWorkflowFile>
                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Add_Queue_Item.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Custom_Workflow\Add_Queue_Item.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-                                      <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
-                                      <InArgument x:TypeArguments="s:DateTime" x:Key="in_datePeriod">[datePeriod]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_strFilePath">[strFilePath]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_strRawFilePath">[ienAttachment.First]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_strDateRange">[strDateRange]</InArgument>
+                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                        <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
+                                        <VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="in_TransactionItem" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="s:DateTime" x:Key="in_datePeriod">
+                                        <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="datePeriod" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_strFilePath">
+                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strFilePath" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_strRawFilePath">
+                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ienAttachment.First" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_strDateRange">
+                                        <Literal x:TypeArguments="x:String" Value="" />
+                                      </InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                   </ui:InvokeWorkflowFile>
                                 </Sequence>
