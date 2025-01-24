@@ -395,13 +395,13 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="420,196" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,196" sap2010:WorkflowViewState.IdRef="Sequence_34">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Workflow\Validate_EmailAttachment.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="386,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Custom_Workflow\Validate_EmailAttachment.xaml">
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Workflow\Validate_EmailAttachment.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="382,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Custom_Workflow\Validate_EmailAttachment.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="snm:MailMessage" x:Key="in_MailMessage">[email]</InArgument>
                                 <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
@@ -413,7 +413,7 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="420,89" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_35">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -669,11 +669,7 @@
                   </ActivityAction.Argument>
                   <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="610,3940" sap2010:WorkflowViewState.IdRef="Sequence_117">
                     <Sequence.Variables>
-                      <Variable x:TypeArguments="scg:List(s:DateTime)" Name="listSuccessfulDates">
-                        <Variable.Default>
-                          <VisualBasicValue x:TypeArguments="scg:List(s:DateTime)" ExpressionText="New List (of DateTime)" />
-                        </Variable.Default>
-                      </Variable>
+                      <Variable x:TypeArguments="scg:List(s:DateTime)" Default="[New List (of DateTime)]" Name="listSuccessfulDates" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -983,11 +979,7 @@ Take(2).Select(Function(m) m.Value)) &amp; "/" &amp; in_datePeriod.Year, "d/M/yy
                     </ui:ForEach>
                     <Sequence DisplayName="Mark failed in log" sap:VirtualizedContainerService.HintSize="576,1070" sap2010:WorkflowViewState.IdRef="Sequence_147">
                       <Sequence.Variables>
-                        <Variable x:TypeArguments="scg:List(s:DateTime)" Name="listUnsuccessfulDates">
-                          <Variable.Default>
-                            <VisualBasicValue x:TypeArguments="scg:List(s:DateTime)" ExpressionText="New List (of DateTime)" />
-                          </Variable.Default>
-                        </Variable>
+                        <Variable x:TypeArguments="scg:List(s:DateTime)" Default="[New List (of DateTime)]" Name="listUnsuccessfulDates" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -999,7 +991,7 @@ Take(2).Select(Function(m) m.Value)) &amp; "/" &amp; in_datePeriod.Year, "d/M/yy
                           <OutArgument x:TypeArguments="scg:List(s:DateTime)">[listUnsuccessfulDates]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="scg:List(s:DateTime)">[Enumerable.Range(0, (in_datePeriod - listSuccessfulDates.Min()).Days + 1).Select(Function(i) listSuccessfulDates.Min().AddDays(i)).Except(listSuccessfulDates).ToList()]</InArgument>
+                          <InArgument x:TypeArguments="scg:List(s:DateTime)">[Enumerable.Range(0, (in_datePeriod - New DateTime(in_datePeriod.Year, in_datePeriod.Month, 1)).Days + 1).Select(Function(i) New DateTime(in_datePeriod.Year, in_datePeriod.Month, 1).AddDays(i)).Except(listSuccessfulDates).ToList()]</InArgument>
                         </Assign.Value>
                       </Assign>
                       <ui:ForEach x:TypeArguments="s:DateTime" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="488,864" sap2010:WorkflowViewState.IdRef="ForEach`1_46" Values="[listUnsuccessfulDates]">

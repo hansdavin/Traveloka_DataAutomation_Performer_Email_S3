@@ -669,11 +669,7 @@
                   </ActivityAction.Argument>
                   <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="610,3940" sap2010:WorkflowViewState.IdRef="Sequence_117">
                     <Sequence.Variables>
-                      <Variable x:TypeArguments="scg:List(s:DateTime)" Name="listSuccessfulDates">
-                        <Variable.Default>
-                          <VisualBasicValue x:TypeArguments="scg:List(s:DateTime)" ExpressionText="New List (of DateTime)" />
-                        </Variable.Default>
-                      </Variable>
+                      <Variable x:TypeArguments="scg:List(s:DateTime)" Default="[New List (of DateTime)]" Name="listSuccessfulDates" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -983,23 +979,19 @@ Take(2).Select(Function(m) m.Value)) &amp; "/" &amp; in_datePeriod.Year, "d/M/yy
                     </ui:ForEach>
                     <Sequence DisplayName="Mark failed in log" sap:VirtualizedContainerService.HintSize="576,1070" sap2010:WorkflowViewState.IdRef="Sequence_147">
                       <Sequence.Variables>
-                        <Variable x:TypeArguments="scg:List(s:DateTime)" Name="listUnsuccessfulDates">
-                          <Variable.Default>
-                            <VisualBasicValue x:TypeArguments="scg:List(s:DateTime)" ExpressionText="New List (of DateTime)" />
-                          </Variable.Default>
-                        </Variable>
+                        <Variable x:TypeArguments="scg:List(s:DateTime)" Default="[New List (of DateTime)]" Name="listUnsuccessfulDates" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="488,114" sap2010:WorkflowViewState.IdRef="Assign_46">
+                      <Assign sap:VirtualizedContainerService.HintSize="488,114" sap2010:WorkflowViewState.IdRef="Assign_47">
                         <Assign.To>
                           <OutArgument x:TypeArguments="scg:List(s:DateTime)">[listUnsuccessfulDates]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="scg:List(s:DateTime)">[Enumerable.Range(0, (in_datePeriod - listSuccessfulDates.Min()).Days + 1).Select(Function(i) listSuccessfulDates.Min().AddDays(i)).Except(listSuccessfulDates).ToList()]</InArgument>
+                          <InArgument x:TypeArguments="scg:List(s:DateTime)">[Enumerable.Range(0, (in_datePeriod - New DateTime(in_datePeriod.Year, in_datePeriod.Month, 1)).Days + 1).Select(Function(i) New DateTime(in_datePeriod.Year, in_datePeriod.Month, 1).AddDays(i)).Except(listSuccessfulDates).ToList()]</InArgument>
                         </Assign.Value>
                       </Assign>
                       <ui:ForEach x:TypeArguments="s:DateTime" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="488,864" sap2010:WorkflowViewState.IdRef="ForEach`1_46" Values="[listUnsuccessfulDates]">
